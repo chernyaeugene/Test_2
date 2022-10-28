@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Modal from "./Modal/Modal";
 
 
+
 function App() {
     let [count, setCount] = React.useState(0)
 
@@ -26,10 +27,10 @@ function App() {
                     <button onClick={onClickPlus} className={'plus'}>Добавить +</button>
                 </div>
                 <button onClick={onClickRes} className={'reset'}>Сброс</button>
-                <Modal></Modal>
+                <Modal count={count}/>
             </div>
-
         </div>
+
     )
 }
 
