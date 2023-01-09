@@ -1,32 +1,33 @@
 import React, {useState} from "react";
 import Modal from "./Modal/Modal";
+import './index.css'
 
 
 
 function App() {
-    let [count, setCount] = React.useState(0)
+    let [count, setCount] = React.useState(0);
 
-    function onClickPlus() {
-        setCount(count + 1);
+    const onClickPlus = () => {
+        setCount(count + 1)
     }
 
-    function onClickMin() {
-        setCount(count - 1);
-    }
-    function onClickRes() {
-        setCount(count = 0);
+    const onClickMinus = () => {
+        setCount(count - 1)
     }
 
+    const onClickReset = () => {
+        setCount(count = 0 )
+    }
     return (
         <div className={'App'}>
-            <div>
+            <div className={'result'}>
                 <h2>Плюсователь</h2>
                 <h1>{count}</h1>
                 <div>
-                    <button onClick={onClickMin} className={'minus'}>- Уменьшить</button>
+                    <button  onClick={onClickMinus} className={'minus'}>- Уменьшить</button>
                     <button onClick={onClickPlus} className={'plus'}>Добавить +</button>
                 </div>
-                <button onClick={onClickRes} className={'reset'}>Сброс</button>
+                <button onClick={onClickReset} className={'reset'}>Сброс</button>
                 <Modal count={count}/>
             </div>
         </div>
